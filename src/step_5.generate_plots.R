@@ -73,15 +73,20 @@ g <- MyFeaturePlot(tobj=panc, tgenes=c('Sox9','Foxa2','Hnf1b','Gata6','Pdx1'), t
                    treduction.name="umap", tncol=5, tlowcolor=myExpLowColor, thighcolor=myExpHighColor, tlegend=NULL)
 ggsave(file.path(figdir, "Figure.1E.png"), plot=g, width=21, height=3.5, dpi=300)
 
-# Figure S1F: UMAP plot showing the expression of acinar cell (Gata4 and Ptf1a) and endocrine lineage (Nkx2.9, Nkx6.1 and Neurog3) marker genes.
-g <- MyFeaturePlot(tobj=panc, tgenes=c('Nkx2-9','Nkx6-1'), tcells=untreated.cells, tassay="SCT", 
+# Figure S1F: UMAP plot showing the expression of acinar cell (Gata4 and Ptf1a) and endocrine lineage (Nkx2.2, Nkx6.1 and Neurog3) marker genes.
+g <- MyFeaturePlot(tobj=panc, tgenes=c('Gata4','Nkx6-1'), tcells=untreated.cells, tassay="SCT", 
                    treduction.name="umap", tncol=2, tlowcolor=myExpLowColor, thighcolor=myExpHighColor, tlegend=NULL)
-ggsave(file.path(figdir, "Figure.1F.a.png"), plot=g, width=8.5, height=3.5, dpi=300)
-# no expressions for Neurog3
+ggsave(file.path(figdir, "Figure.S1F.a.png"), plot=g, width=8, height=3.5, dpi=300)
+# no cells expressing Neurog3
 # use 'RNA' slot to plot this gene since 'SCT' automatically remove genes with very few cells expressing it
 g <- MyFeaturePlot(tobj=panc, tgenes='Neurog3', tcells=untreated.cells, tassay="RNA", 
                    treduction.name="umap", tncol=1, tlowcolor=myExpLowColor, thighcolor=myExpHighColor, tlegend=NULL)
-ggsave(file.path(figdir, "Figure.1F.b.png"), plot=g, width=4, height=3.5, dpi=300)
+ggsave(file.path(figdir, "Figure.S1F.b.png"), plot=g, width=4, height=3.5, dpi=300)
+# very few cells expressing Nkx2-2 and Ptf1a
+# use 'RNA' slot to plot this gene since 'SCT' automatically remove genes with very few cells expressing it
+g <- MyFeaturePlot(tobj=panc, tgenes=c('Nkx2-2','Ptf1a'), tcells=untreated.cells, tassay="RNA", 
+                   treduction.name="umap", tncol=1, tlowcolor=myExpLowColor, thighcolor=myExpHighColor, tlegend=NULL)
+ggsave(file.path(figdir, "Figure.S1F.c.png"), plot=g, width=8, height=3.5, dpi=300)
 
 # Figure 1D: Correlation analysis of cell clusters based on unsupervised analysis and CMO-labels.
 corr.clusters.samples <- as.matrix(as.data.frame.matrix(table(FetchData(panc, vars=c('Name','ident')))) %>%
