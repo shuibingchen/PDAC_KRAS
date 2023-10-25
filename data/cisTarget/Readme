@@ -1,0 +1,22 @@
+2/27/2023
+
+Download the following files for running pySCENIC
+
+1) lists of transcription factors (TFs) for Mouse:
+https://resources.aertslab.org/cistarget/tf_lists/allTFs_mm.txt
+
+2) Ranking databases
+rankings: Matrix containing motifs as rows and genes as columns and ranking position for each gene and motif (based on CRM scores) as values. To be used with cisTarget (R).
+The search space around the TSS of the gene in which the motif is scored is indicated in the database name:
+500bpUp: 500bp upstream of TSS.
+TSS+/-10kb: 10kb around the TSS (total: 20kb).
+TSS+/-5kb: 5kb around the TSS (total: 10kb).
+5kbUp,FullTx: 5kb upstream TSS and transcript introns.
+500bpUp100Dw: 500bp upstream of TSS, and 100bp downstream.
+
+https://resources.aertslab.org/cistarget/databases/mus_musculus/mm10/refseq_r80/mc_v10_clust/gene_based/mm10_10kbp_up_10kbp_down_full_tx_v10_clust.genes_vs_motifs.rankings.feather
+
+3) Motif annotations
+https://resources.aertslab.org/cistarget/motif2tf/motifs-v10nr_clust-nr.mgi-m0.001-o0.0.tbl
+
+
