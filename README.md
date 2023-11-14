@@ -15,5 +15,12 @@ database with accession#
 ### Requirements
 
 The following R packages were used:
-- Seurat
+- Seurat (v3.1.0)
+- ggplot2
+- pheatmap
+- dplyr
+- tibble
+
+The following python package was used:
+- pyscenic
 
